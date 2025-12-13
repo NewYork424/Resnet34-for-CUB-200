@@ -1,0 +1,96 @@
+# 全局配置
+project_name: "BirdClassification"
+output_dir: "./logs"
+device: "cuda"
+seed: 42
+
+# 任务控制
+task: "train" # 仅保留 train
+model: "dl" # dl | svm | decision_tree | linear | all
+
+# 数据集通用配置
+data:
+  root: "./data"
+  num_workers: 0 # must be 0 for windows
+
+# === 模型特定配置 ===
+
+# 1. 深度学习 (ResNet)
+DL:
+  mode: "supervised" # supervised (普通分类) | pretrain (对比学习)
+  batch_size: 64
+  img_size: 448
+
+  class_num: 200
+  epochs: 300
+  lr: 0.0003
+  weight_decay: 0.0001
+  attention: "coord" # coord | se
+  pool: "gem"
+  gem_p: 3.0
+  
+  # Supervised 模式参数
+  dropout: 0.1
+  freeze_backbone: false  
+  pretrained_backbone: "./logs/best_se_pretrain/best_pretrain_weight.pth"
+  # "./logs/best_pretrain/best_pretrained_backbone.pth"
+  save_path: "best_model.pth"
+  label_smoothing: 0.1
+  
+  # 显著性引导损失配置
+  use_saliency_loss: true
+  saliency_alpha: 0.1       
+  saliency_kernel_size: 3   
+
+  # 数据增强配置
+  use_randaugment: true
+  ra_num_ops: 3
+  ra_magnitude: 12
+  train_scale_min: 0.7             
+  random_erasing_p: 0.5            
+  random_erasing_scale: [0.02, 0.2]
+  random_erasing_ratio: [0.3, 3.3] 
+
+  # Pretrain (MoCo) 模式参数
+  moco:
+    image_size: 384
+    batch_size: 64
+    epochs: 400
+    dim: 128
+    k: 2048
+    m: 0.999
+    t: 0.1
+    momentum: 0.9 # SGD momentum
+
+# 2. 支持向量机 (SVM)
+svm:
+  feature_type: "attr" # attr | image
+  kernel: "rbf"
+  C: 10.0
+  gamma: 0.001
+  degree: 3
+  class_num: 10
+
+# 3. 决策树 (Decision Tree)
+decision_tree:
+  feature_type: "attr" # attr | image
+  criterion: "cart" # cart:gini | c45
+  max_depth: null
+  min_samples_split: 2
+  min_samples_leaf: 5
+  min_impurity_decrease: 0.0
+  pre_pruning: true
+  post_pruning: false
+  class_num: 10
+
+linear:
+  feature_type: "attr" # attr | image
+  feature_map: "poly2" # identity | poly2 | rbf
+  rff_dim: 512
+  rff_gamma: 0.5
+  standardize: true
+  lr: 0.05
+  epochs: 200
+  reg: 1e-4
+  batch_size: 256
+  class_num: 10
