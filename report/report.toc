@@ -1,19 +1,20 @@
 \contentsline {section}{\numberline {1}任务说明与实验设置}{2}{section.1}%
 \contentsline {subsection}{\numberline {1.1}任务描述}{2}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}环境配置}{2}{subsection.1.2}%
-\contentsline {section}{\numberline {2}方法论与系统设计 (Methodology)}{2}{section.2}%
-\contentsline {subsection}{\numberline {2.1}总体设计思路}{2}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}机制一：关注差异点 (Attention \& Pooling)}{2}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Coordinate Attention (坐标注意力)}{3}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}广义平均池化 (GeM Pooling)}{3}{subsubsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.3}机制二：忽略噪声 (Saliency-Guided Loss)}{3}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}机制三：防止过拟合 (MoCo Pretrain)}{3}{subsection.2.4}%
-\contentsline {subsubsection}{\numberline {2.4.1}基于 MoCo v2 的域内自监督预训练}{3}{subsubsection.2.4.1}%
-\contentsline {section}{\numberline {3}传统机器学习方法实验结果}{4}{section.3}%
+\contentsline {section}{\numberline {2}传统机器学习方法实验结果}{2}{section.2}%
+\contentsline {section}{\numberline {3}方法论与系统设计}{2}{section.3}%
+\contentsline {subsection}{\numberline {3.1}总体设计思路}{2}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}关注差异点}{3}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}SE 注意力机制}{3}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}坐标注意力机制}{3}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}两种注意力机制的对比总结}{3}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}广义平均池化}{3}{subsubsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.3}忽略噪声}{4}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}防止过拟合}{4}{subsection.3.4}%
 \contentsline {section}{\numberline {4}深度学习方法实验结果}{4}{section.4}%
 \contentsline {subsection}{\numberline {4.1}主要结果与消融实验}{4}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}结果分析：验证设计思路}{5}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}去噪与聚焦能力的验证}{5}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}抗过拟合策略的必要性}{5}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}注意力机制的作用分析}{5}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}去噪与聚焦能力的验证}{5}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}抗过拟合策略的必要性}{5}{subsubsection.4.2.3}%
 \contentsline {section}{\numberline {5}总结}{5}{section.5}%
 \contentsline {section}{\numberline {6}附录：项目结构}{6}{section.6}%

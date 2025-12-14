@@ -6,11 +6,12 @@ seed: 42
 
 # 任务控制
 task: "train" # 仅保留 train
-model: "dl" # dl | svm | decision_tree | linear | all
+model: "svm" # dl | svm | decision_tree | linear | all
 
 # 数据集通用配置
 data:
   root: "./data"
+  img_size: 224
   num_workers: 0 # must be 0 for windows
 
 # === 模型特定配置 ===

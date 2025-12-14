@@ -36,7 +36,6 @@ def run_svm_task(cfg, logger):
     acc = clf.score(X_test, y_test)
     logger.info(f"SVM Accuracy: {acc:.4f}")
 
-    # [新增] 保存结果
     # 1. 保存模型
     model_path = os.path.join(output_dir, "svm_model.joblib")
     scaler_path = os.path.join(output_dir, "scaler.joblib")
